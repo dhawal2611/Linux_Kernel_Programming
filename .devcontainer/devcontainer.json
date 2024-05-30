@@ -1,0 +1,29 @@
+{
+    "name": "Linux Kernel Programming",
+    "dockerFile": "Dockerfile", // Path to your Dockerfile
+    "runArgs": [
+      "--network=host",
+      "--privileged"
+  ],
+    "customizations":{
+      "vscode": {
+        "extensions": [
+            "ms-vscode.cpptools",
+            "ms-python.python",
+            "cschlosser.doxdocgen",
+            "jbenden.c-cpp-flylint",
+            "ms-vscode.makefile-tools",
+            "ms-azuretools.vscode-docker"
+        ],
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash",
+          "notebook.file.autoSave": "afterDelay",
+          "notebook.file.autoSaveDelay": 1000
+  
+        }
+      }
+    }
+    // "postCreateCommand": "pip3 install jupyter",
+    // "runArgs": ["--user", "vscode", "--privileged"],
+    // "workspaceMount": "source=/workspace,destination=/workspace,type=bind,consistency=cached"
+  }
