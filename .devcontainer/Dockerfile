@@ -1,15 +1,26 @@
 # Use a base image
-FROM ubuntu:latest
+FROM ubuntu:22.04
+
+# Set environment variables if needed
+#ENV DEBIAN_FRONTEND=noninteractive
 
 # Install required dependencies
 RUN apt-get update && \
     apt-get install -y wget && \
     apt-get install -y git \ 
     build-essential \
+    coreutils \
     xsltproc \
     cmake \
     docbook-xsl \
     vim \
     net-tools \
-    make
+    make \
+    kmod \
+    linux-headers-$(uname -r)
+
+# Command to keep the container running or enter a shell
+CMD ["bash"]
+
+
 

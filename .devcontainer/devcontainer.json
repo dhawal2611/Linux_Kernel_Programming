@@ -4,16 +4,18 @@
     "runArgs": [
       "--network=host",
       "--privileged"
-  ],
+    ],
     "customizations":{
       "vscode": {
         "extensions": [
             "ms-vscode.cpptools",
+            //"ms-vscode.remote-containers",
             "ms-python.python",
             "cschlosser.doxdocgen",
             "jbenden.c-cpp-flylint",
             "ms-vscode.makefile-tools",
-            "ms-azuretools.vscode-docker"
+            "ms-azuretools.vscode-docker",
+            "ms-vscode.cpptools-extension-pack"
         ],
         "settings": {
           "terminal.integrated.shell.linux": "/bin/bash",
