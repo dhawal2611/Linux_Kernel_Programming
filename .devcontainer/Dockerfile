@@ -1,5 +1,6 @@
 # Use a base image
 FROM ubuntu:22.04
+#FROM ubuntu:latest
 
 # Set environment variables if needed
 #ENV DEBIAN_FRONTEND=noninteractive
