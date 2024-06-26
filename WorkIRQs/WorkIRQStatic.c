@@ -8,20 +8,20 @@
 int i = 0;
 
 // The tasklet function
-static void tasklet_function(struct tasklet_struct *t)
+static void work_function(struct work_struct *t)
 //static void tasklet_function(unsigned long data)
 {
-    printk(KERN_INFO "Tasklet function executed.\n");
+    printk(KERN_INFO "WorkIRQ function got executed.\n");
 }
 
 // Define the tasklet with the correct macro usage
-DECLARE_TASKLET(my_tasklet, tasklet_function);
+DECLARE_WORK(my_work, work_function);
 
 static irqreturn_t my_interrupt_handler(int irq, void *dev_id)
 {
-    printk(KERN_INFO "Interrupt occured and calling tasklet %d\n", i++);
+    printk(KERN_INFO "Interrupt occured and calling workirq %d\n", i++);
     // Schedule the tasklet
-    tasklet_schedule(&my_tasklet);
+    schedule_work(&my_work);
     return IRQ_HANDLED;
 }
 
@@ -42,9 +42,6 @@ static int __init my_module_init(void)
 
 static void __exit my_module_exit(void)
 {
-    // Kill the tasklet
-    tasklet_kill(&my_tasklet);
-
     // Free the IRQ line
     free_irq(IRQ_NUM, (void *)(my_interrupt_handler));
 
@@ -56,6 +53,6 @@ module_exit(my_module_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Lad Dhawal Umesh <dhawal261195@gmail.com>");
-MODULE_DESCRIPTION("Static Tasklet Example");
+MODULE_DESCRIPTION("Static Workqueue Example");
 MODULE_VERSION("1.0");
 

@@ -2,14 +2,12 @@
 #include <linux/kernel.h>
 #include <linux/interrupt.h>
 #include <linux/init.h>
-#include<linux/slab.h>
 
 #define IRQ_NUM 1
 int i = 0;
 
 // The tasklet function
 static void tasklet_function(struct tasklet_struct *t)
-//static void tasklet_function(unsigned long data)
 {
     printk(KERN_INFO "Tasklet function executed.\n");
 }
