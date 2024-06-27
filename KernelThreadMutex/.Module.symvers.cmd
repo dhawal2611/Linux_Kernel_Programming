@@ -1,0 +1,1 @@
+savedcmd_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/Module.symvers :=  scripts/mod/modpost -m -a      -o /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/Module.symvers -T /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/modules.order -i Module.symvers -e 
