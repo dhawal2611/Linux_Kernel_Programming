@@ -15,7 +15,8 @@
 struct mutex etx_mutex;
 unsigned long etx_global_variable = 0;
 
-DEFINE_MUTEX(etx_mutex);
+//Static Method
+//DEFINE_MUTEX(etx_mutex);
 
 static int __init etx_driver_init(void);
 static void __exit etx_driver_exit(void);
@@ -32,6 +33,7 @@ int thread1_function(void *pv)
 		mutex_lock(&etx_mutex);
 		etx_global_variable++;
 		pr_info("In Thread1 %lu\n", etx_global_variable);
+		msleep(3000);
 		mutex_unlock(&etx_mutex);
 		msleep(1000);
 	}
@@ -53,7 +55,7 @@ int thread2_function(void *pv)
 
 static int __init etx_driver_init(void)
 {
-	//mutex_init(&etx_mutex);
+	mutex_init(&etx_mutex); //Dynnamic Method
 	// Thread 1
 	etx1_thread = kthread_run(thread1_function,NULL,"eTx Thread1");
 	if(etx1_thread) {

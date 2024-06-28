@@ -1,1 +1,0 @@
-savedcmd_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/modules.order := {   echo /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o; :; } > /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/modules.order

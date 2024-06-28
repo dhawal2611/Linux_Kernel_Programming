@@ -1,8 +1,8 @@
-savedcmd_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o := gcc-12 -Wp,-MMD,/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/.KernelThreadMutex.o.d -nostdinc -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/compiler-version.h -include ./include/linux/kconfig.h -I./ubuntu/include -include ./include/linux/compiler_types.h -D__KERNEL__ -fmacro-prefix-map=./= -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -Wall -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 -fno-allow-store-data-races -Wframe-larger-than=1024 -fstack-protector-strong -Wno-main -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-dangling-pointer -fno-omit-frame-pointer -fno-optimize-sibling-calls -ftrivial-auto-var-init=zero -fno-stack-clash-protection -fzero-call-used-regs=used-gpr -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -falign-functions=16 -Wvla -Wno-pointer-sign -Wcast-function-type -Wno-stringop-truncation -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -Wno-array-bounds -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wno-packed-not-aligned -g -gdwarf-5  -fsanitize=bounds-strict -fsanitize=shift -fsanitize=bool -fsanitize=enum  -DMODULE  -DKBUILD_BASENAME='"KernelThreadMutex"' -DKBUILD_MODNAME='"KernelThreadMutex"' -D__KBUILD_MODNAME=kmod_KernelThreadMutex -c -o /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.c   ; ./tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --retpoline --rethunk --sls --stackval --static-call --uaccess --prefix=16   --module /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o
+savedcmd_/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o := gcc-12 -Wp,-MMD,/home/dhawal/Linux_Kernel_Programming/SignalDriver/.SignalDrv.o.d -nostdinc -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/compiler-version.h -include ./include/linux/kconfig.h -I./ubuntu/include -include ./include/linux/compiler_types.h -D__KERNEL__ -fmacro-prefix-map=./= -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -Wall -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 -fno-allow-store-data-races -Wframe-larger-than=1024 -fstack-protector-strong -Wno-main -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-dangling-pointer -fno-omit-frame-pointer -fno-optimize-sibling-calls -ftrivial-auto-var-init=zero -fno-stack-clash-protection -fzero-call-used-regs=used-gpr -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -falign-functions=16 -Wvla -Wno-pointer-sign -Wcast-function-type -Wno-stringop-truncation -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -Wno-array-bounds -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wno-packed-not-aligned -g -gdwarf-5  -fsanitize=bounds-strict -fsanitize=shift -fsanitize=bool -fsanitize=enum  -DMODULE  -DKBUILD_BASENAME='"SignalDrv"' -DKBUILD_MODNAME='"SignalDrv"' -D__KBUILD_MODNAME=kmod_SignalDrv -c -o /home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o /home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.c   ; ./tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --retpoline --rethunk --sls --stackval --static-call --uaccess --prefix=16   --module /home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o
 
-source_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o := /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.c
+source_/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o := /home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.c
 
-deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o := \
+deps_/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o := \
   include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   include/linux/kconfig.h \
@@ -22,6 +22,10 @@ deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o
     $(wildcard include/config/ARCH_USE_BUILTIN_BSWAP) \
     $(wildcard include/config/SHADOW_CALL_STACK) \
     $(wildcard include/config/KCOV) \
+  include/uapi/linux/ioctl.h \
+  arch/x86/include/generated/uapi/asm/ioctl.h \
+  include/asm-generic/ioctl.h \
+  include/uapi/asm-generic/ioctl.h \
   include/linux/kernel.h \
     $(wildcard include/config/PREEMPT_VOLUNTARY_BUILD) \
     $(wildcard include/config/PREEMPT_DYNAMIC) \
@@ -273,10 +277,6 @@ deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o
   include/uapi/linux/screen_info.h \
   include/linux/apm_bios.h \
   include/uapi/linux/apm_bios.h \
-  include/uapi/linux/ioctl.h \
-  arch/x86/include/generated/uapi/asm/ioctl.h \
-  include/asm-generic/ioctl.h \
-  include/uapi/asm-generic/ioctl.h \
   include/linux/edd.h \
   include/uapi/linux/edd.h \
   arch/x86/include/asm/ist.h \
@@ -987,6 +987,7 @@ deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o
   include/linux/dqblk_qtree.h \
   include/linux/projid.h \
   include/uapi/linux/quota.h \
+  include/linux/cdev.h \
   include/linux/device.h \
     $(wildcard include/config/GENERIC_MSI_IRQ) \
     $(wildcard include/config/ENERGY_MODEL) \
@@ -1027,13 +1028,63 @@ deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o
   include/linux/device/driver.h \
   arch/x86/include/asm/device.h \
   include/linux/pm_wakeup.h \
-  include/linux/kthread.h \
-  include/linux/delay.h \
-  arch/x86/include/asm/delay.h \
-  include/asm-generic/delay.h \
+  include/linux/interrupt.h \
+    $(wildcard include/config/IRQ_FORCED_THREADING) \
+    $(wildcard include/config/GENERIC_IRQ_PROBE) \
+    $(wildcard include/config/IRQ_TIMINGS) \
+  include/linux/irqreturn.h \
+  include/linux/hardirq.h \
+  include/linux/context_tracking_state.h \
+    $(wildcard include/config/CONTEXT_TRACKING_USER) \
+    $(wildcard include/config/CONTEXT_TRACKING) \
+  include/linux/ftrace_irq.h \
+    $(wildcard include/config/HWLAT_TRACER) \
+    $(wildcard include/config/OSNOISE_TRACER) \
+  include/linux/vtime.h \
+    $(wildcard include/config/VIRT_CPU_ACCOUNTING) \
+    $(wildcard include/config/IRQ_TIME_ACCOUNTING) \
+  arch/x86/include/asm/hardirq.h \
+    $(wildcard include/config/KVM_INTEL) \
+    $(wildcard include/config/HAVE_KVM) \
+    $(wildcard include/config/X86_THERMAL_VECTOR) \
+    $(wildcard include/config/X86_MCE_THRESHOLD) \
+    $(wildcard include/config/X86_MCE_AMD) \
+    $(wildcard include/config/X86_HV_CALLBACK_VECTOR) \
+    $(wildcard include/config/HYPERV) \
+  arch/x86/include/asm/irq.h \
+  arch/x86/include/asm/irq_vectors.h \
+    $(wildcard include/config/PCI_MSI) \
+  arch/x86/include/asm/sections.h \
+  include/asm-generic/sections.h \
+    $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
+  arch/x86/include/asm/io.h \
+    $(wildcard include/config/MTRR) \
+    $(wildcard include/config/X86_PAT) \
+  arch/x86/include/generated/asm/early_ioremap.h \
+  include/asm-generic/early_ioremap.h \
+    $(wildcard include/config/GENERIC_EARLY_IOREMAP) \
+  arch/x86/include/asm/shared/io.h \
+  include/asm-generic/iomap.h \
+    $(wildcard include/config/HAS_IOPORT_MAP) \
+  include/asm-generic/pci_iomap.h \
+    $(wildcard include/config/PCI) \
+    $(wildcard include/config/NO_GENERIC_PCI_IOPORT_MAP) \
+    $(wildcard include/config/GENERIC_PCI_IOMAP) \
+  include/asm-generic/io.h \
+    $(wildcard include/config/GENERIC_IOMAP) \
+    $(wildcard include/config/TRACE_MMIO_ACCESS) \
+    $(wildcard include/config/GENERIC_IOREMAP) \
+  include/linux/logic_pio.h \
+    $(wildcard include/config/INDIRECT_PIO) \
+  include/linux/fwnode.h \
+  include/linux/vmalloc.h \
+    $(wildcard include/config/HAVE_ARCH_HUGE_VMALLOC) \
+  arch/x86/include/asm/vmalloc.h \
+    $(wildcard include/config/HAVE_ARCH_HUGE_VMAP) \
+  arch/x86/include/asm/pgtable_areas.h \
 
-/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o: $(deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o)
+/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o: $(deps_/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o)
 
-$(deps_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o):
+$(deps_/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o):
 
-/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.o: $(wildcard ./tools/objtool/objtool)
+/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.o: $(wildcard ./tools/objtool/objtool)

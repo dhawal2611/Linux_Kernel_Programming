@@ -1,4 +1,4 @@
-obj-m += KernelThreadMutex.o
+obj-m += SignalDrv.o
  
 KDIR := /lib/modules/$(shell uname -r)/build
 #KDIR := /workspaces/Linux_Kernel_Programming/linux/

@@ -35,20 +35,32 @@ MODULE_INFO(retpoline, "Y");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0x4dfa8d4b, "mutex_lock" },
-	{ 0x122c3a7e, "_printk" },
-	{ 0x3213f038, "mutex_unlock" },
-	{ 0xf9a482f9, "msleep" },
-	{ 0xb3f7646e, "kthread_should_stop" },
-	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x5d626f20, "kthread_create_on_node" },
-	{ 0xbca77c8c, "wake_up_process" },
-	{ 0x908dcd2e, "kthread_stop" },
+	{ 0x4454730e, "kmalloc_trace" },
+	{ 0x88db9f48, "__check_object_size" },
+	{ 0x13c49cc2, "_copy_from_user" },
+	{ 0x6b10bee1, "_copy_to_user" },
+	{ 0xe3ec2f2b, "alloc_chrdev_region" },
+	{ 0xa6f7a612, "cdev_init" },
+	{ 0xf4407d6b, "cdev_add" },
+	{ 0x1399bb1, "class_create" },
+	{ 0xd3044a78, "device_create" },
+	{ 0x92d5838e, "request_threaded_irq" },
+	{ 0x6091b333, "unregister_chrdev_region" },
+	{ 0xf7be671b, "device_destroy" },
+	{ 0xc1514a3b, "free_irq" },
+	{ 0x92ce99, "class_destroy" },
+	{ 0x8f44466e, "cdev_del" },
 	{ 0xbdfb6dbb, "__fentry__" },
+	{ 0x122c3a7e, "_printk" },
+	{ 0x3402dc8b, "__write_overflow_field" },
+	{ 0xcbd4898c, "fortify_panic" },
+	{ 0x37a0cba, "kfree" },
+	{ 0x5b8239ca, "__x86_return_thunk" },
+	{ 0xb88db70c, "kmalloc_caches" },
 	{ 0x2fa5cadd, "module_layout" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "E5B489474C684B191F211AB");
+MODULE_INFO(srcversion, "56082F4F246B69BA8F6B833");

@@ -1,3 +1,4 @@
+#include <linux/ioctl.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/module.h>
@@ -5,10 +6,46 @@
 #include <linux/fs.h>
 #include <linux/cdev.h>
 #include <linux/device.h>
-#include <linux/slab.h>
-#include <linux/uaccess.h>  //copy_to/from_user()
+#include<linux/slab.h>                 //kmalloc()
+#include<linux/uaccess.h>              //copy_to/from_user()
+#include<linux/sysfs.h>
+#include<linux/kobject.h>
+#include <linux/interrupt.h>
+#include <asm/io.h>
 #include <linux/err.h>
-#include <linux/ioctl.h>
+
+#define SIGETX 44
+
+#define REG_CURRENT_TASK _IOW('a','a',int32_t*)
+
+
+/* Signaling to Application */
+static struct task_struct *task = NULL;
+static int signum = 0;
+
+#define IRQ_NO 11
+
+unsigned int i = 0;
+
+//Interrupt handler for IRQ 1.
+static irqreturn_t irq_handler(int irq,void *dev_id, struct pt_regs *regs) {
+	struct kernel_siginfo info;
+	printk(KERN_INFO "Interrupt Occurred");
+
+	//Sending signal to app
+	memset(&info, 0, sizeof(struct siginfo));
+	info.si_signo = SIGETX;
+	info.si_code = SI_QUEUE;
+	info.si_int = 1;
+
+	if (task != NULL) {
+		printk(KERN_INFO "Sending signal to app\n");
+		if(send_sig_info(SIGETX, &info, task) < 0) {
+			printk(KERN_INFO "Unable to send signal\n");
+		}
+	}
+	return IRQ_HANDLED;
+}
 
 #define MEM_SIZE 1024
 
@@ -86,20 +123,10 @@ static ssize_t my_write(struct file *filp, const char __user *buf, size_t len, l
 }
 
 static long lCharIOCTL(struct file *file, unsigned int cmd, unsigned long arg) {
-	switch(cmd) {
-		case WR_DATA:
-			if(copy_from_user(&i32Val, arg, sizeof(i32Val)) != 0) {
-				pr_err("ERROR: Not all the bytes have been copied from user\n");
-			}
-			pr_info("Valus is: %d\n", i32Val);
-			break;
-		case RD_DATA:
-			if(copy_to_user((int32_t *) arg, &i32Val, sizeof(i32Val)) > 0) {
-				pr_err("ERROR: Not all the bytes have been copied to user\n");
-			}
-			break;
-		default:
-			pr_err("Invalid Option selected\n");
+	if (cmd == REG_CURRENT_TASK) {
+		printk(KERN_INFO "REG_CURRENT_TASK\n");
+		task = get_current();
+		signum = SIGETX;
 	}
 	return 0;
 }
@@ -120,7 +147,7 @@ static int __init my_driver_init(void)
 		goto r_class;
 	}
 
-	if((dev_class = class_create(THIS_MODULE,"my_class")) == NULL){
+	if((dev_class = class_create("my_class")) == NULL){
 		pr_err("Cannot create the struct class\n");
 		goto r_class;
 	}
@@ -131,6 +158,14 @@ static int __init my_driver_init(void)
 		goto r_device;
 	}
 
+	if (request_irq(IRQ_NO, (irq_handler_t)irq_handler, IRQF_SHARED, "my_device", (void *)(irq_handler)) == 0) {
+		printk(KERN_INFO "Device Driver Insert...Done!!!\n");
+		pr_info("Device Driver Insert...*******************Done!!!\n");
+	}
+	else
+		printk(KERN_INFO "Device Driver Insert...Not done abdiubfdka!!!\n");
+
+
 	pr_info("Device Driver Insert...Done!!!\n");
 	return 0;
 
@@ -138,11 +173,12 @@ r_device:
 	device_destroy(dev_class,dev);
 r_class:
 	unregister_chrdev_region(dev,1);\
-	return -1;
+		return -1;
 }
 
 static void __exit my_driver_exit(void)
 {
+	free_irq(IRQ_NO, (void *)(irq_handler));
 	device_destroy(dev_class,dev);
 	class_destroy(dev_class);
 	cdev_del(&my_cdev);

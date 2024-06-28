@@ -23,7 +23,7 @@ int thread_function(void *pv)
 {
     int i=0;
     while(!kthread_should_stop()) {
-        pr_info("In EmbeTronicX Thread Function %d\n", i++);
+        pr_info("In Thread Function %d\n", i++);
         msleep(1000);
     }
     return 0;

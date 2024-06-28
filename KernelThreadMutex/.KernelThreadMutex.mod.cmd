@@ -1,1 +1,0 @@
-savedcmd_/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.mod := printf '%s\n'   KernelThreadMutex.o | awk '!x[$$0]++ { print("/home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/"$$0) }' > /home/dhawal/Linux_Kernel_Programming/KernelThreadMutex/KernelThreadMutex.mod
