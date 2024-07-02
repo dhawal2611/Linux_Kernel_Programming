@@ -54,7 +54,7 @@ static int my_release(struct inode *inode, struct file *file)
 
 static ssize_t my_read(struct file *filp, char __user *buf, size_t len, loff_t *off)
 {
-	strcpy(KernelBuffer, "This is Dhawal Lad");
+	//strcpy(KernelBuffer, "This is Dhawal Lad");
 	if( copy_to_user(buf, KernelBuffer, MEM_SIZE) > 0) {
 		pr_err("ERROR: Not all the bytes have been copied to user\n");
 	}
@@ -92,7 +92,7 @@ static int __init my_driver_init(void)
 		goto r_class;
 	}
 
-	if((dev_class = class_create(THIS_MODULE,"my_class")) == NULL){
+	if((dev_class = class_create("my_class")) == NULL){
 		pr_err("Cannot create the struct class\n");
 		goto r_class;
 	}

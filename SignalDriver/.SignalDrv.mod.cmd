@@ -1,1 +1,0 @@
-savedcmd_/home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.mod := printf '%s\n'   SignalDrv.o | awk '!x[$$0]++ { print("/home/dhawal/Linux_Kernel_Programming/SignalDriver/"$$0) }' > /home/dhawal/Linux_Kernel_Programming/SignalDriver/SignalDrv.mod

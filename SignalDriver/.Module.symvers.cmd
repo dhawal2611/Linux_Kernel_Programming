@@ -1,1 +1,0 @@
-savedcmd_/home/dhawal/Linux_Kernel_Programming/SignalDriver/Module.symvers :=  scripts/mod/modpost -m -a      -o /home/dhawal/Linux_Kernel_Programming/SignalDriver/Module.symvers -T /home/dhawal/Linux_Kernel_Programming/SignalDriver/modules.order -i Module.symvers -e 
